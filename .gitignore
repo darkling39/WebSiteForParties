@@ -3,3 +3,6 @@
 
 # Ada Library Information
 /node_modules
+
+*.package-lock.json
+*.package.json
