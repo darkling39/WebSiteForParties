@@ -5,6 +5,23 @@ const analyticsRoutes = require("./routes/analytics");
 const categoryRoutes = require("./routes/category");
 const orderRoutes = require("./routes/order");
 const positionRoutes = require("./routes/position");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const keys = require("./config/keys");
+mongoose
+  .connect(keys.mongoURI)
+  .then(() => {
+    console.log("connected!");
+  })
+  .catch((e) => {
+    console.log(e);
+  });
+
+app.use(require("morgan")("dev"));
+app.use(require("cors")());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/analytics", analyticsRoutes);
