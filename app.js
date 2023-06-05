@@ -8,6 +8,8 @@ const positionRoutes = require("./routes/position");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
+const models = require("./models/user");
+
 mongoose
   .connect(keys.mongoURI)
   .then(() => {
