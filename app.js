@@ -8,7 +8,7 @@ const positionRoutes = require("./routes/position");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
-const models = require("./models/user");
+const passport = require("passport");
 
 mongoose
   .connect(keys.mongoURI)
@@ -18,6 +18,9 @@ mongoose
   .catch((e) => {
     console.log(e);
   });
+
+app.use(passport.initialize());
+require("./middleware/passport")(passport);
 
 app.use(require("morgan")("dev"));
 app.use(require("cors")());
