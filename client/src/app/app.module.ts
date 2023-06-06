@@ -10,6 +10,11 @@ import { AuthLayoutComponent } from './shared/layouts/auth-layout/auth-layout.co
 import { SiteLayoutComponent } from './shared/layouts/site-layout/site-layout.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { TokenInterceptor } from './shared/token.interseptor';
+import { OverviewComponent } from './components/overview/overview.component';
+import { AnalyticsComponent } from './components/analytics/analytics.component';
+import { HistoryComponent } from './components/history/history.component';
+import { ProductFormPageComponent } from './components/products-page/product-form-page/product-form-page.component';
+import { ProductFormComponent } from './components/products-page/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +23,11 @@ import { TokenInterceptor } from './shared/token.interseptor';
     AuthLayoutComponent,
     SiteLayoutComponent,
     RegisterPageComponent,
+    OverviewComponent,
+    AnalyticsComponent,
+    HistoryComponent,
+    ProductFormPageComponent,
+    ProductFormComponent,
   ],
   imports: [
     BrowserModule,
