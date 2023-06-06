@@ -11,7 +11,7 @@ import { NewOrderPageComponent } from './components/new-order-page/new-order-pag
 import { OrderCategoriesComponent } from './components/new-order-page/order-categories/order-categories.component';
 import { OrderPositionsComponent } from './components/new-order-page/order-positions/order-positions.component';
 import { ProductsPageComponent } from './components/products-page/products-page.component';
-import { ProductFormPageComponent } from './components/products-page/product-form-page/product-form-page.component';
+// import { ProductFormPageComponent } from './components/products-page/product-form-page/product-form-page.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 
 const routes: Routes = [
@@ -40,8 +40,8 @@ const routes: Routes = [
         ],
       },
       { path: 'categories', component: ProductsPageComponent },
-      { path: 'categories/new', component: ProductFormPageComponent },
-      { path: 'categories/:id', component: ProductFormPageComponent },
+      // { path: 'categories/new', component: ProductFormPageComponent },
+      // { path: 'categories/:id', component: ProductFormPageComponent },
       { path: 'analytics', component: AnalyticsComponent },
     ],
   },
