@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { IUser } from 'src/app/shared/interfaces';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login-page',
@@ -9,7 +10,12 @@ import { IUser } from 'src/app/shared/interfaces';
   styleUrls: ['./login-page.component.css'],
 })
 export class LoginPageComponent {
-  constructor(private auth: AuthService) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+  aSub: Subscription;
   form: FormGroup;
   ngOnInit() {
     this.form = new FormGroup({
@@ -19,15 +25,25 @@ export class LoginPageComponent {
         Validators.minLength(6),
       ]),
     });
+    this.route.queryParams.subscribe((params: Params) => {
+      if (params['registered']) {
+      } else if (params['accessDenied']) {
+      }
+    });
   }
   onSubmit() {
-    this.auth.login(this.form.value).subscribe(
+    this.form.disable();
+    this.aSub = this.auth.login(this.form.value).subscribe(
       () => {
-        console.log('login success');
+        this.router.navigate(['overview']);
       },
       (e) => {
         console.warn(e);
+        this.form.enable();
       }
     );
+  }
+  ngOnDestroy() {
+    if (this.aSub) this.aSub.unsubscribe();
   }
 }
