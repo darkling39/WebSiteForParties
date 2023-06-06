@@ -13,6 +13,10 @@ import { TokenInterceptor } from './shared/token.interseptor';
 import { OverviewComponent } from './components/overview/overview.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { HistoryComponent } from './components/history/history.component';
+import { NewOrderPageComponent } from './components/new-order-page/new-order-page.component';
+import { OrderCategoriesComponent } from './components/new-order-page/order-categories/order-categories.component';
+import { OrderPositionsComponent } from './components/new-order-page/order-positions/order-positions.component';
+import { ProductsPageComponent } from './components/products-page/products-page.component';
 import { ProductFormPageComponent } from './components/products-page/product-form-page/product-form-page.component';
 import { ProductFormComponent } from './components/products-page/product-form/product-form.component';
 
@@ -26,6 +30,10 @@ import { ProductFormComponent } from './components/products-page/product-form/pr
     OverviewComponent,
     AnalyticsComponent,
     HistoryComponent,
+    NewOrderPageComponent,
+    OrderCategoriesComponent,
+    OrderPositionsComponent,
+    ProductsPageComponent,
     ProductFormPageComponent,
     ProductFormComponent,
   ],
